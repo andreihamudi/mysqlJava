@@ -60,7 +60,6 @@ CREATE TABLE plati (
   KEY idx_fk_idutilizator (idutilizator),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 CREATE TABLE carduri (
   idcard    SMALLINT     UNSIGNED NOT NULL AUTO_INCREMENT,
   nume varchar(50)  NOT NULL,
