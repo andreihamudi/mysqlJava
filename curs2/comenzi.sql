@@ -66,6 +66,12 @@ ALTER TABLE nume_tabel CHANGE dat data TEXT;
 # modifica tipul coloanei 'data' din 'TEXT' in coloana de tip 'DATE'
 ALTER TABLE nume_tabel CHANGE data data DATE;
 
+-- Valideaza valoarea unei coloane
+-- ALTER TABLE nume_tabel ADD CHECK (nume_coloana >=18);
+ALTER TABLE produse ADD CHECK (cantitate >=1);
+-- Valideaza valoarile din doua coloane
+-- ALTER TABLE nume_tabel ADD CONSTRAINT CHK_nume CHECK (nume_coloana >=18 AND nume_coloana2='Bucuresti');
+
 #Stergeti tabela
 DROP TABLE produse;
 
