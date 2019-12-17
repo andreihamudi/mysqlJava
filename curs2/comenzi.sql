@@ -54,6 +54,17 @@ SHOW COLUMNS FROM produse;
 #puteti prezenta doar structura unei singure coloane
 DESCRIBE produse.idprodus;
 
+-- stergerea unei coloane
+-- ALTER TABLE nume_tabel DROP COLUMN nume_coloana
+ALTER TABLE produse DROP COLUMN firma;
+-- Adaugarea unei coloane
+-- ALTER TABLE nume_tabel ADD nume_coloana tip;
+ALTER TABLE `produse` ADD `ts` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `data_addp`;
+
+# redenumeste coloana numita 'dat' cu numele 'data'
+ALTER TABLE nume_tabel CHANGE dat data TEXT;	
+# modifica tipul coloanei 'data' din 'TEXT' in coloana de tip 'DATE'
+ALTER TABLE nume_tabel CHANGE data data DATE;
 
 #Stergeti tabela
 DROP TABLE produse;
