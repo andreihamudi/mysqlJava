@@ -92,6 +92,23 @@ public class Students {
             e.printStackTrace();
         }
     }
+    public static void updateStudents(Students student) {
+        String sql = "update studenti set nume='"
+                + student.getNume() + "', prenume='"
+                + student.getPrenume() + "', cnp ='"
+                + student.getCnp() + "', data_nasterii ='"
+                + student.getDataNastere() + "' where numar_matricol = '" + student.getNrMatricol() + "' ";
+        System.out.println(sql);
+        Connection connection = DbConnector.getDbConnection();
+        Statement statement;
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(sql);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
