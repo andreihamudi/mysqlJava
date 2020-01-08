@@ -36,3 +36,13 @@ CHANGE COLUMN `cod_profesor` `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ;
 ALTER TABLE `facultate`.`profesori`
 ADD COLUMN `cod_profesor` VARCHAR(10) NOT NULL AFTER `id`,
 ADD UNIQUE INDEX `cod_profesor_UNIQUE` (`cod_profesor` ASC) ;
+
+UPDATE studenti SET nume='Popescu', prenume='Dan' where id=2;
+
+ INSERT INTO profesori (nume, prenume, adresa, cnp, data_nasterii, grad_didactic) VALUES
+ ('Marin','Dumitru','Bucuresti','1770508541254','1977-5-8', 'III'),
+ ('Popescu','Dorin','Bucuresti','1810508543546','1981-8-5', 'II'),
+ ('Marinescu','Diana','Bucuresti','1670606345643','1967-6-6', 'I');
+
+INSERT INTO profesori (nume, prenume, cnp, data_nasterii) SELECT nume, prenume,cnp, data_nasterii FROM
+ studenti WHERE id =1;
