@@ -34,3 +34,13 @@ select * from student WHERE
 
 --ap4  8
 SELECT * FROM `student` where bursa * 12 >4000 ;
+
+SELECT c.id_curs, c.titlu_curs, n.valoare FROM `cursuri` c NATURAL JOIN note n;
+SELECT * FROM studenti CROSS JOIN note;
+SELECT * FROM studenti JOIN note;
+SELECT * FROM studenti INNER JOIN note;
+SELECT * FROM studenti , note;
+SELECT * FROM studenti CROSS JOIN note WHERE prenume='Andrei';
+SELECT * FROM studenti CROSS JOIN note CROSS JOIN cursuri;
+SELECT * FROM cursuri INNER JOIN note USING (id_curs);
+SELECT * FROM cursuri c INNER JOIN note n on c.id_curs= n.id_curs;
