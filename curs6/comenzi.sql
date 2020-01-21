@@ -19,6 +19,22 @@ DELIMITER ;
 CALL list_curs2(13, 16);
 
 
+--  SELECT cu CASE
+
+SELECT 
+    *,
+    CASE
+        WHEN n.valoare < 7 THEN 'Atentie mergi la biblioteca'
+        WHEN n.valoare >= 7 AND n.valoare < 9 THEN 'Binisor'
+        ELSE 'FB'
+    END
+FROM
+    studenti s
+        LEFT JOIN
+    note n ON s.id = n.id_student
+WHERE
+    s.id = 111;
+
 -- functii
 
 use firma;
